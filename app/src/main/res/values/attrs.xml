@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="bluBackgroundHeaderAttr" format="reference" />
+    <attr name="bluBackgroundBottomSheetAttr" format="reference" />
+    <attr name="bluIconHeaderAttr" format="reference" />
+</resources>

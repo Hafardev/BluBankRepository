@@ -1,0 +1,170 @@
+ext {
+
+    android = [
+            applicationId    : "com.example.mybasicapplication",
+            minSdkVersion    : 24,
+            targetSdkVersion : 33,
+            compileSdkVersion: 33,
+    ]
+
+    depVersions = [
+            "lifecycle"       : "2.2.0",
+            "hilt"            : "2.44",
+            "kotlin"          : "1.5.20",
+            "coroutine"       : "1.5.0",
+            "androidx_core"   : "1.7.0",
+            "appcompat"       : "1.5.0",
+            "material"        : "1.6.1",
+            "constraintlayout": "2.1.2",
+            "junit"           : "4.+",
+            "androidx_test"   : "1.1.3",
+            "esspreso"        : "3.4.0",
+            "room"            : "2.5.1",
+            "nav_version"     : "2.5.0",
+            "paging"          : "3.1.1",
+            "recycler_view"   : "1.2.1",
+            "dagger"          : "2.+",
+            "room_paging"     : "2.4.3",
+            "gson"            : "2.9.1",
+            "retrofit"        : "2.9.0",
+            "okhttp"          : "4.10.0",
+            "gson_converter"  : "2.9.0",
+
+
+    ]
+
+
+    //Common Dependency
+    commonDependency = new DependencyList()
+            .add("org.jetbrains.kotlin:kotlin-stdlib:${depVersions.kotlin}")
+            .add("org.jetbrains.kotlinx:kotlinx-coroutines-core:${depVersions.coroutine}", DependencyType.API)
+            .add("org.jetbrains.kotlinx:kotlinx-coroutines-android:${depVersions.coroutine}", DependencyType.API)
+            .add("com.google.dagger:dagger:${depVersions.dagger}")
+            .add("com.google.dagger:dagger-compiler:${depVersions.dagger}", DependencyType.ANNOTATION)
+            .add("junit:junit:4.12")
+            .add("com.google.code.gson:gson:${depVersions.gson}")
+            .add("com.google.dagger:hilt-compiler:${depVersions.hilt}", DependencyType.KAPT)
+            .add("com.google.dagger:hilt-android:${depVersions.hilt}")
+
+
+    //Data Dependency
+    dataDep = new DependencyList(commonDependency)
+            .add("androidx.test.espresso:espresso-core:3.4.0", DependencyType.ANDROID_TEST)
+            .add("androidx.test.ext:junit:1.1.3", DependencyType.ANDROID_TEST)
+            .add("androidx.room:room-ktx:${depVersions.room}", DependencyType.API)
+            .add("androidx.room:room-runtime:${depVersions.room}", DependencyType.API)
+            .add("androidx.room:room-compiler:${depVersions.room}", DependencyType.KAPT)
+            .add("com.squareup.retrofit2:retrofit:${depVersions.retrofit}", DependencyType.API)
+            .add("com.squareup.retrofit2:converter-gson:${depVersions.gson_converter}")
+            .add("com.squareup.okhttp3:logging-interceptor:${depVersions.okhttp}", depVersions.okhttp)
+            .add("com.squareup.okhttp3:okhttp:${depVersions.okhttp}", depVersions.okhttp)
+            .add("androidx.paging:paging-common-ktx:${depVersions.paging}")
+            .add("androidx.room:room-paging:${depVersions.room_paging}")
+    // .add("androidx.room:room-coroutines:2.1.0-alpha04")
+
+    //Domain Dependency
+    domainDep = new DependencyList(commonDependency)
+
+
+    //Presentation Dependency
+    presentationDep = new DependencyList(commonDependency)
+            .add("androidx.lifecycle:lifecycle-viewmodel-ktx:${depVersions.lifecycle}")
+            .add("androidx.lifecycle:lifecycle-runtime-ktx:${depVersions.lifecycle}")
+            .add("androidx.lifecycle:lifecycle-extensions:${depVersions.lifecycle}")
+            .add("androidx.navigation:navigation-fragment-ktx:${depVersions.nav_version}")
+            .add("androidx.navigation:navigation-ui-ktx:${depVersions.nav_version}")
+            .add("androidx.recyclerview:recyclerview:${depVersions.recycler_view}")
+            .add("androidx.appcompat:appcompat:${depVersions.appcompat}")
+            .add("androidx.test.espresso:espresso-core:3.4.0")
+            .add("androidx.constraintlayout:constraintlayout:${depVersions.constraintlayout}")
+            .add("com.google.android.material:material:${depVersions.material}")
+            .add("androidx.room:room-ktx:${depVersions.room}")
+            .add("androidx.room:room-runtime:${depVersions.room}")
+            .add("androidx.room:room-compiler:${depVersions.room}", DependencyType.KAPT)
+            .add("androidx.paging:paging-runtime-ktx:${depVersions.paging}")
+          //  .add("com.android.databinding:compiler:3.5.0" , DependencyType.KAPT)
+
+}
+
+enum DependencyType {
+    API("api"),
+    IMPLEMENTATION("implementation"),
+    TEST("testImplementation"),
+    ANDROID_TEST("androidTestImplementation"),
+    ANNOTATION("annotationProcessor"),
+    KAPT("kapt")
+
+    DependencyType(String title) {
+        this.title = title
+    }
+    String title
+
+    @Override
+    public String toString() {
+        return title
+    }
+}
+
+class DependencyItem {
+    String url
+    DependencyType type
+    String requiredVersion = null
+
+    DependencyItem(String url, DependencyType type) {
+        this.url = url
+        this.type = type
+    }
+
+    DependencyItem(String url) {
+        this.url = url
+        this.type = DependencyType.IMPLEMENTATION
+    }
+
+    DependencyItem(String url, String requiredVersion) {
+        this(url, DependencyType.IMPLEMENTATION)
+        this.requiredVersion = requiredVersion
+    }
+
+    @Override
+    public String toString() {
+        return "|-- >> $type : $url"
+    }
+}
+
+class DependencyList {
+    private List<DependencyItem> items = new ArrayList<>();
+
+    DependencyList(DependencyList dependencyList) {
+        if (items != null)
+            this.items = new ArrayList<>(dependencyList.items)
+    }
+
+    DependencyList() {
+    }
+
+
+    DependencyList add(String url) {
+        items.add(new DependencyItem(url))
+        return this
+    }
+
+    DependencyList add(String url, DependencyType type) {
+        items.add(new DependencyItem(url, type))
+        return this
+    }
+
+    DependencyList add(String url, String requiredVersion) {
+        items.add(new DependencyItem(url, requiredVersion))
+        return this
+    }
+
+    List<DependencyItem> get() {
+        return items.sort { item ->
+            switch (item.type) {
+                case DependencyType.IMPLEMENTATION: return -1
+                case DependencyType.ANNOTATION: return 0
+                default: 1
+            }
+        }.toList()
+    }
+}

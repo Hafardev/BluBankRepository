@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/top_view_container"
+    style="?bluBackgroundHeaderAttr"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_support"
+        style="?bluIconHeaderAttr"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/ic_notification"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_support"
+
+        />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_notification"
+        style="?bluIconHeaderAttr"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintLeft_toRightOf="@id/ic_support"
+        app:layout_constraintRight_toLeftOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_notification" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_download"
+        style="?bluIconHeaderAttr"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintLeft_toRightOf="@id/guideline7"
+        app:layout_constraintRight_toLeftOf="@id/ic_search"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_download" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_search"
+        style="?bluIconHeaderAttr"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintLeft_toRightOf="@id/ic_download"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_search" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/toolbar_title"
+        style="@style/BluTitleNormalHeaderTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/title_toolbar"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline5"
+        app:layout_constraintRight_toRightOf="@+id/guideline7"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_balance_value"
+        style="@style/BluTitleBoldHeaderTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/balance_value"
+        app:layout_constraintBottom_toTopOf="@+id/txt_balance_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline4" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_balance_title"
+        style="@style/BluTitleNormalHeaderTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/balance_title"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_balance_value" />
+
+
+    <LinearLayout
+        android:id="@+id/container_charge_account"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginVertical="@dimen/_10dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/container_box"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline6">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/charge_account"
+            style="?bluIconHeaderAttr"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/bg_circle_selected"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toTopOf="@+id/txt_charge_account"
+            app:layout_constraintLeft_toRightOf="@id/box"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline6"
+            app:srcCompat="@drawable/ic_add"
+            android:tint="@color/blue"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_charge_account"
+            style="@style/BluTitleNormalBoldHeaderTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="@string/charge_account"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/txt_box"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/charge_account" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_box"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginVertical="@dimen/_10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/container_finance_management"
+        app:layout_constraintRight_toLeftOf="@id/container_charge_account"
+        app:layout_constraintTop_toBottomOf="@id/guideline6">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/box"
+            style="?bluIconHeaderAttr"
+            android:layout_marginVertical="5dp"
+            app:layout_constraintBottom_toTopOf="@id/txt_box"
+            app:layout_constraintLeft_toRightOf="@id/finance_management"
+            app:layout_constraintRight_toLeftOf="@id/charge_account"
+            app:layout_constraintTop_toBottomOf="@id/guideline6"
+            app:srcCompat="@drawable/ic_spaces" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_box"
+            style="@style/BluTitleNormalBoldHeaderTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="@string/txt_box"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/txt_finance_management"
+            app:layout_constraintRight_toLeftOf="@id/txt_charge_account"
+            app:layout_constraintTop_toBottomOf="@id/box" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/container_finance_management"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginVertical="@dimen/_10dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/container_box"
+        app:layout_constraintTop_toBottomOf="@id/guideline6">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/finance_management"
+            style="?bluIconHeaderAttr"
+            android:layout_marginVertical="5dp"
+            app:layout_constraintBottom_toTopOf="@id/txt_finance_management"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/box"
+            app:layout_constraintTop_toBottomOf="@id/guideline6"
+            app:srcCompat="@drawable/ic_chart" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_finance_management"
+            style="@style/BluTitleNormalBoldHeaderTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="@string/finance_managment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/txt_box"
+            app:layout_constraintTop_toBottomOf="@id/finance_management" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

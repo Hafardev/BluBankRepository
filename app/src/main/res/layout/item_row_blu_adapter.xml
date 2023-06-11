@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.data.entityModel.GetBLUOfflineDataMock" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@color/blu_color_background_transaction"
+        >
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_service_name"
+            style="@style/BluRowBoldTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="0dp"
+            android:padding="0dp"
+            android:text="@{item.serviceName}"
+            app:layout_constraintBottom_toTopOf="@id/guideline2"
+            app:layout_constraintRight_toLeftOf="@id/guideline3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_date_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="0dp"
+            android:padding="0dp"
+            android:text="@{item.persianDateTime}"
+            style="@style/BluRowSmallTextView"
+            app:layout_constraintRight_toLeftOf="@id/guideline3"
+            app:layout_constraintTop_toBottomOf="@id/guideline2" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_service"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="5dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="@id/guideline2"
+            app:layout_constraintLeft_toLeftOf="@id/guideline3"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline2" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:padding="3dp"
+            android:text="@{item.amount}"
+            style="@style/BluRowNormalTextView"
+            app:layout_constraintBottom_toBottomOf="@id/guideline2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline2"
+            app:layout_constraintTop_toTopOf="@id/guideline2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.85" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

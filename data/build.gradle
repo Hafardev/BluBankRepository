@@ -1,0 +1,62 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+apply plugin: 'kotlin-android'
+def config = getRootProject().extensions.getByName("ext")
+android {
+    namespace 'com.example.data'
+    compileSdk config.android.compileSdkVersion
+    defaultConfig {
+        minSdk config.android.minSdkVersion
+        targetSdk config.android.targetSdkVersion
+        consumerProguardFiles "consumer-rules.pro"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+}
+java {
+    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_1_8
+}
+dependencies {
+
+    implementation project(path: ':domain')
+
+    config.dataDep.get().each {
+        obj ->
+            println("$obj")
+            if (obj.requiredVersion != null) {
+                println("INSIDE FORCE VERSION BLOCK ")
+                add("${obj.type}", obj.url) {
+                    version {
+                        strictly "$requiredVersion"
+                    }
+                }
+            } else {
+                println("INSIDE ELSE BLOCK ")
+                add("${obj.type}", obj.url)
+            }
+    }
+
+}

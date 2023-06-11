@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+
+    <style name="BluBackgroundHeader" >
+        <item name="android:background">@drawable/bg_header_light</item>
+    </style>
+
+
+    <style name="BluBackgroundBottomSheetStyle" >
+        <item name="android:background">@drawable/bg_bottom_sheet_light</item>
+    </style>
+
+    <style name="BluIconHeaderStyle" >
+        <item name="android:tint">@color/blu_color_icon_tint_header</item>
+        <item name="android:background">@drawable/bg_circle_transparent</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_width">@dimen/_60dp</item>
+        <item name="android:layout_height">@dimen/_60dp</item>
+    </style>
+
+    <style name="BluTitleNormalHeaderTextView" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/medium_text_size</item>
+        <item name="android:textColor">@color/blu_color_content_header</item>
+    </style>
+
+    <style name="BluTitleNormalBoldHeaderTextView" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/medium_text_size</item>
+        <item name="android:textColor">@color/blu_color_content_header</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BluTitleBoldHeaderTextView" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/large_text_size</item>
+        <item name="android:textColor">@color/blu_color_content_header</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="BluTitleSmallHeaderTextView" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/small_text_size</item>
+        <item name="android:textColor">@color/blu_color_content_header</item>
+    </style>
+
+
+    <style name="BluRowNormalTextView" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/small_text_size</item>
+        <item name="android:textColor">@color/blu_color_content_price_transaction</item>
+    </style>
+
+    <style name="BluRowBoldTextView" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/medium_text_size</item>
+        <item name="android:textColor">@color/blu_color_content_title_transaction</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="BluRowSmallTextView" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/small_text_size</item>
+        <item name="android:textColor">@color/blu_color_content_description_transaction</item>
+    </style>
+
+</resources>

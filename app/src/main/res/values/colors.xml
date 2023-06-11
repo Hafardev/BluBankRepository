@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="black_1">#FF000000</color>
+    <color name="black_2">#1B2028</color>
+    <color name="black_3">#253035</color>
+    <color name="black_4">#154641</color>
+
+    <color name="gray_1">#E7EAEF</color>
+    <color name="gray_2">#C9EDE8</color>
+    <color name="gray_3">#9FABBE</color>
+    <color name="gray_4">#718E9C</color>
+    <color name="gray_5">#F2F5F6</color>
+    <color name="gray_6">#718E9C</color>
+
+    <color name="gray_blue_1">#BBF4EC</color>
+    <color name="gray_blue_2">#00BD92</color>
+    <color name="gray_blue_3">#82D5C2</color>
+
+
+    <color name="blue">#4E91E6</color>
+    <color name="transparent">#00FFFFFF</color>
+
+
+
+    <color name="blu_color_icon_tint_header">@color/white</color>
+    <color name="blu_color_content_header">@color/white</color>
+
+    <color name="blu_color_content_title_transaction">@color/black_3</color>
+    <color name="blu_color_content_description_transaction">@color/gray_4</color>
+    <color name="blu_color_content_price_transaction">@color/black_3</color>
+    <color name="blu_color_highlight_tint_transaction">@color/gray_blue_1</color>
+    <color name="blu_color_highlight_tint_text_transaction">@color/gray_blue_1</color>
+    <color name="blu_color_background_transaction">@color/white</color>
+    <color name="blu_color_icon_bg_tint_transaction">@color/gray_5</color>
+    <color name="blu_color_icon_design_tint_transaction">@color/gray_6</color>
+
+</resources>
+
+
+
