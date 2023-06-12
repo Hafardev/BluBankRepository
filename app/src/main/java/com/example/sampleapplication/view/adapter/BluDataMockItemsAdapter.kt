@@ -11,9 +11,7 @@ import com.example.data.entityModel.GetBLUOfflineDataMock
 import com.example.sampleapplication.R
 import com.example.sampleapplication.databinding.ItemRowBluAdapterBinding
 
-/**
-Created by Hadis Farmani
- */
+
 class BluDataMockItemsAdapter(
     private val mockDataList: ArrayList<GetBLUOfflineDataMock>,
     private val context: Context

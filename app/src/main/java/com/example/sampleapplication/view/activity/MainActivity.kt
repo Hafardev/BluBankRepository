@@ -12,9 +12,7 @@ import com.example.sampleapplication.R
 import com.example.sampleapplication.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-/**
-Created by Hadis Farmani
- */
+
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 

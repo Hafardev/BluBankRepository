@@ -11,9 +11,7 @@ import kotlinx.coroutines.flow.*
 import java.io.IOException
 import javax.inject.Inject
 
-/**
-Created by Hadis Farmani
- */
+
 @HiltViewModel
 class BluViewModel @Inject constructor(
     val getUserRepositoriesUseCase: GetUserRepositoriesUseCase

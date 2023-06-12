@@ -25,9 +25,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
-/**
-Created by Hadis Farmani
- */
+
 @AndroidEntryPoint
 class FirstFragment : Fragment() {
 
